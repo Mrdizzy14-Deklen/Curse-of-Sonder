@@ -1,0 +1,71 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://cxwfxqa2vqpj7"]
+
+[ext_resource type="Texture2D" uid="uid://dcjgsnvss7vk5" path="res://Assets/tilemapfloor.png" id="1_nvy8s"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tnwwh"]
+noise_type = 5
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oe3jw"]
+noise = SubResource("FastNoiseLite_tnwwh")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_7hbqr"]
+texture = SubResource("NoiseTexture2D_oe3jw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sojjh"]
+atlas = ExtResource("1_nvy8s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_r5a26"]
+texture = SubResource("AtlasTexture_sojjh")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_v84x3"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_u5s0m"]
+constant = 0.25
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D tex_frg_3;
+uniform sampler2D tex_frg_7;
+
+
+
+void fragment() {
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, UV);
+
+
+// FloatConstant:9
+	float n_out9p0 = 0.250000;
+
+
+// FloatOp:8
+	float n_out8p0 = n_out3p0.x * n_out9p0;
+
+
+// Texture2D:7
+	vec4 n_out7p0 = texture(tex_frg_7, vec2(n_out8p0));
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out7p0.xyz);
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(1340, 700)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_7hbqr")
+nodes/fragment/3/position = Vector2(-220, 320)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_r5a26")
+nodes/fragment/7/position = Vector2(860, 580)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatOp_v84x3")
+nodes/fragment/8/position = Vector2(440, 700)
+nodes/fragment/9/node = SubResource("VisualShaderNodeFloatConstant_u5s0m")
+nodes/fragment/9/position = Vector2(-260, 1040)
+nodes/fragment/connections = PackedInt32Array(7, 0, 0, 0, 3, 0, 8, 0, 8, 0, 7, 0, 9, 0, 8, 1)

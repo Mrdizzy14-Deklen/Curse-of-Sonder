@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1rgex81dx6cp"]
+
+[ext_resource type="Script" uid="uid://dduc55uhc4hfy" path="res://instruction_screen.gd" id="1_esyf2"]
+[ext_resource type="Texture2D" uid="uid://cqofocsxbkj3j" path="res://Assets/instruction_screen.png" id="1_iefqd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_esyf2")
+
+[node name="InstructionScreen" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_iefqd")

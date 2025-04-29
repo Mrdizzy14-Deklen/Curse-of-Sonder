@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmo01s5jqawa0"]
+
+[ext_resource type="Script" uid="uid://dtc8x7l4p7pv0" path="res://Presets/Components/curse_component.gd" id="1_h77gm"]
+
+[node name="CurseComponent" type="Node"]
+script = ExtResource("1_h77gm")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=4 uid="uid://bq7vhxq3tm75k"]
+
+[ext_resource type="Script" uid="uid://chk3388yqb38a" path="res://Rooms/room.gd" id="1_s7x63"]
+[ext_resource type="TileSet" uid="uid://dnc1q05at8l1k" path="res://Rooms/Level0/hallway_floor.tres" id="2_edrif"]
+[ext_resource type="TileSet" uid="uid://chr1lpqo5xxsq" path="res://Assets/wallset.tres" id="3_nyqw8"]
+
+[node name="RoomBase" type="Node2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_s7x63")
+
+[node name="Decor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AAABAAAAAAABAP//AAADAAAAAAACAP//AAACAAAAAAD8////AAAAAAAAAAD9////AAADAAAAAAD+////AAADAAAAAAD/////AAADAAAAAAD8//r/AAAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAACAAAAAAD8//3/AAADAAAAAAD8//7/AAABAAAAAAD9//r/AAADAAAAAAD9//v/AAADAAAAAAD9//z/AAADAAAAAAD9//3/AAADAAAAAAD9//7/AAABAAAAAAD+//r/AAACAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD///r/AAADAAAAAAD///v/AAABAAAAAAD///z/AAAAAAAAAAD///3/AAACAAAAAAD///7/AAABAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAACAAAAAAAAAP7/AAACAAAAAAABAPr/AAABAAAAAAABAPv/AAADAAAAAAABAPz/AAAAAAAAAAABAP3/AAABAAAAAAABAP7/AAABAAAAAAACAPr/AAAAAAAAAAACAPv/AAACAAAAAAACAPz/AAACAAAAAAACAP3/AAABAAAAAAACAP7/AAACAAAAAAA=")
+tile_set = ExtResource("2_edrif")
+
+[node name="WallsBack" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//v/AAAAAAEAAAD8//z/AAAAAAEAAAD8//3/AAADAAEAAAD8//7/AAADAAEAAAACAPv/AAACAAEAAAACAPz/AAACAAEAAAACAP3/AAAFAAEAAAACAP7/AAACAAEAAAD8//n/AAADAAAAAAACAPn/AAAFAAAAAAD9//n/AAABAAAAAAD+//n/AAAEAAAAAAD///n/AAABAAAAAAAAAPn/AAAEAAAAAAABAPn/AAAEAAAAAAACAPr/AAACAAEAAAD8//r/AAAAAAEAAAA=")
+tile_set = ExtResource("3_nyqw8")
+
+[node name="WallsFront" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAD8////AAADAAIAAAACAP//AAAFAAIAAAABAP//AAAEAAIAAAD9////AAAEAAIAAAD+////AAABAAMAAAAAAP//AAAAAAMAAAD8/wAAAAAEAAUAAAD9/wAAAAABAAUAAAABAAAAAAABAAUAAAACAAAAAAAEAAUAAAA=")
+tile_set = ExtResource("3_nyqw8")
+
+[node name="CharacterSpawns" type="Node2D" parent="."]
+
+[node name="Exit" type="Node2D" parent="."]
+position = Vector2(-8.5, -56.5)

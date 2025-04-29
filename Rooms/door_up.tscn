@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://drdp2gqdoqk5l"]
+
+[ext_resource type="Texture2D" uid="uid://d4g614gu0dwmc" path="res://Assets/door_up_closed.png" id="1_dryby"]
+[ext_resource type="Script" uid="uid://nyn83gayjty7" path="res://Rooms/door_up.gd" id="1_huvh2"]
+[ext_resource type="Texture2D" uid="uid://cl5psfuvfdlnd" path="res://Assets/door_up_open.png" id="1_n0dl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4wf1"]
+size = Vector2(44, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujcrn"]
+size = Vector2(7, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nmk"]
+size = Vector2(7, 11)
+
+[node name="DoorUp" type="Node2D"]
+script = ExtResource("1_huvh2")
+
+[node name="DoorUpOpen" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-8, -16)
+texture = ExtResource("1_n0dl4")
+
+[node name="DoorClosed" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorClosed"]
+position = Vector2(-8, -20.5)
+shape = SubResource("RectangleShape2D_e4wf1")
+
+[node name="Door" type="Sprite2D" parent="DoorClosed"]
+position = Vector2(-8, -16)
+texture = ExtResource("1_dryby")
+
+[node name="DoorOpenRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenRight"]
+position = Vector2(10.5, -15.5)
+shape = SubResource("RectangleShape2D_ujcrn")
+
+[node name="DoorOpenLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenLeft"]
+position = Vector2(-26.5, -15.5)
+shape = SubResource("RectangleShape2D_m3nmk")

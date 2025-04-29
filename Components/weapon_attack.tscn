@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkq5g5tg2ykkj"]
+
+[ext_resource type="Script" uid="uid://bodegn3serp40" path="res://Components/weapon_attack.gd" id="1_lx6c8"]
+
+[node name="WeaponAttack" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lx6c8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

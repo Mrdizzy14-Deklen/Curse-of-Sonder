@@ -1,0 +1,9 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://b0jxwejyeekvv"]
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_e8okx"]
+resource_name = "Limiter"
+
+[resource]
+bus/0/volume_db = -22.5766
+bus/0/effect/0/effect = SubResource("AudioEffectLimiter_e8okx")
+bus/0/effect/0/enabled = true

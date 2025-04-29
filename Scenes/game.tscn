@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://do7x2ld1tuxym"]
+
+[ext_resource type="Script" uid="uid://b4ysyjdjro78q" path="res://Scenes/game.gd" id="1_3tjm1"]
+[ext_resource type="Texture2D" uid="uid://dcjgsnvss7vk5" path="res://Assets/tilemapfloor.png" id="2_2qs2m"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_3tjm1")
+
+[node name="Tilemapfloor" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1585, -76)
+scale = Vector2(10, 10)
+texture = ExtResource("2_2qs2m")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
